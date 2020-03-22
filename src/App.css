@@ -1,38 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#header {
+  border-bottom: 2px solid black;
+  background-color: lightseagreen;
+  padding: 15px 0 15px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#header h1 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links {
+  font-weight: bold;
+  text-decoration: none !important;
+  margin: 10px 0 10px 0;
+  padding: 10px 25px 10px 25px;
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+
+.links:hover {
+  background: gray;
+}
+
+.links:visited {
+  color: white;
+}
+
+#data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#total {
+  flex-basis: 100%;
+}
+
+.data-container {
+  margin: 30px;
+}
+
+#patient-container {
+  border-top: 1px solid black;
+}
+
+.patients {
+  border: 2px solid black;
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.patients h3 {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+label {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#individual-cases-title {
+  margin: 15px 0;
+}
+
+.radio-label {
+  display: inline;
+  font-weight: bold;
+}
+
+input[type=radio] {
+  margin-bottom: 10px;
 }
