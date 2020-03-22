@@ -90,3 +90,13 @@ label {
 input[type=radio] {
   margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 700px) {
+  .patients {
+    max-width: 90%;
+  }
+
+  #header {
+    padding: 20px 20px 0 20px;
+  }
+}
