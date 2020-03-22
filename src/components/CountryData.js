@@ -3,7 +3,7 @@ import { FaBriefcaseMedical, FaAmbulance, FaHeartbeat, FaMedkit, FaCross } from 
 
 const CountryData = ({ summary }) => {
     return (
-        <div>
+        <div id='country-data'>
 
             <div id='data'>
                 <div className="data-container" id='total'>

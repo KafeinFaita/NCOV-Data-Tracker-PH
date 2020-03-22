@@ -23,8 +23,6 @@ const Home = ({ summary, data }) => {
     useEffect(() => {
         setPatientData(data.filter(patient => (patient.gender === gender || !gender) && (patient.status === status || !status)))
     }, [gender, status])
-
-    console.log(data)
     
     return (
         <div id='local-data'>
