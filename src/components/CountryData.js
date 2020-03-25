@@ -12,22 +12,22 @@ const CountryData = ({ summary }) => {
                     <p>{summary.cases}</p>
                 </div>
                 
-                <div className="data-container">
+                <div className="data-container" id='active'>
                     <FaAmbulance size='40'/>
                     <p>Active Cases: {summary.active}</p>
                 </div>
 
-                <div className="data-container">
+                <div className="data-container" id='critical'>
                     <FaHeartbeat size='40'/>
                     <p>Critical Cases: {summary.critical}</p>
                 </div>
 
-                <div className="data-container">
+                <div className="data-container" id='recovered'>
                     <FaMedkit size='40'/>
                     <p>Recovered: {summary.recovered}</p>
                 </div>
 
-                <div className="data-container">
+                <div className="data-container" id='deaths'>
                     <FaCross size='40'/>
                     <p>Deaths: {summary.deaths}</p>
                 </div>

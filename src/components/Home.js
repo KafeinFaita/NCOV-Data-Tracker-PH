@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import CountryData from './CountryData';
-import LazyLoad from 'react-lazyload';
 
 const Home = ({ summary, data }) => {
 
     const [patientData, setPatientData] = useState([]);
     const [gender, setGender] = useState('');
     const [status, setStatus] = useState('');
+
+    const today = new Date();
 
     useEffect(() => {
         setPatientData(data)
@@ -26,8 +27,11 @@ const Home = ({ summary, data }) => {
     
     return (
         <div id='local-data'>
-            <h1>Philippines: Quick Summary</h1>
-            <CountryData summary={summary}/>
+            <div id="ph-summary">
+                <h1>Philippines</h1>
+                <p>As of {today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()}</p>
+                <CountryData summary={summary}/>
+            </div>
 
             <div id="patient-container">
                 <h2 id='individual-cases-title'>Individual Cases Information</h2>
@@ -56,7 +60,7 @@ const Home = ({ summary, data }) => {
                     <label for="R">Recovered</label>
                 </form>
 
-                {patientData.map(patient => <LazyLoad placeholder={<p>Loading, please wait</p>}>
+                {patientData.map(patient =>
                     <div className='patients'>
                         <h3>Case #{patient.case_no}</h3>
                         <p>Date Diagnosed: {patient.date}</p>
@@ -69,7 +73,7 @@ const Home = ({ summary, data }) => {
                         <p>Additional Info: {patient.other_information}</p>
 
                     </div>
-                </LazyLoad>)}
+                )}
             </div>
             
         </div>

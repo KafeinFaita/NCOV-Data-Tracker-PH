@@ -43,29 +43,59 @@ ul {
 
 #data {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
 }
 
-#total {
-  flex-basis: 100%;
+#local-data {
+  display: flex;
+
 }
 
 .data-container {
-  margin: 30px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.data-container:hover {
+  background-color: white;
+  
+}
+
+.data-container p {
+  font-weight: bold;
+}
+
+#ph-summary {
+  margin-right: 20px;
+  padding: 20px;
+  border-right: 2px solid black;
+  background-color: rgb(197, 197, 197);
+}
+
+#ph-summary p {
+  margin-bottom: 20px;
 }
 
 #patient-container {
-  border-top: 1px solid black;
+  flex: 1;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .patients {
   border: 2px solid black;
-  max-width: 600px;
+  max-width: 80%;
   margin: 15px auto;
   padding: 15px;
   border-radius: 20px;
   text-align: left;
+
 }
 
 .patients h3 {
@@ -125,6 +155,31 @@ input[type=radio] {
   color: red;
 }
 
+#country-data {
+ color: white;
+}
+
+#total {
+  color: blue;
+}
+
+#active {
+  color: orange;
+}
+
+#critical {
+  color: red;
+}
+
+#recovered {
+  color: green;
+}
+
+#deaths {
+  color: black;
+
+}
+
 
 @media only screen and (max-width: 900px) {
   .patients {
@@ -146,5 +201,14 @@ input[type=radio] {
 @media only screen and (max-width: 700px) {
   .global-stats {
     max-width: 80%;
+  }
+
+  #local-data {
+    display: block;
+  }
+
+  #ph-summary {
+    margin: 0;
+    border: none;
   }
 }
