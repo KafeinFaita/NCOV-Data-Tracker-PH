@@ -6,6 +6,7 @@ const Home = ({ summary, data }) => {
     const [patientData, setPatientData] = useState([]);
     const [gender, setGender] = useState('');
     const [status, setStatus] = useState('');
+    const [pinoysOnly, setPinoysOnly] = useState(false);
 
     const today = new Date();
 
@@ -21,9 +22,19 @@ const Home = ({ summary, data }) => {
         setStatus(e.target.value);  
     }
 
+    const handleNationality = () => {
+        pinoysOnly === false ? setPinoysOnly(true) : setPinoysOnly(false);
+    }
+
     useEffect(() => {
-        setPatientData(data.filter(patient => (patient.gender === gender || !gender) && (patient.status === status || !status)))
-    }, [gender, status])
+        setPatientData(data.filter(patient => { 
+            if (pinoysOnly) {
+                return (patient.gender === gender || !gender) && (patient.status === status || !status) && patient.nationality === 'Filipino'
+            } else {
+                return (patient.gender === gender || !gender) && (patient.status === status || !status)
+            }
+        }))
+    }, [gender, status, pinoysOnly])
     
     return (
         <div id='local-data'>
@@ -38,12 +49,14 @@ const Home = ({ summary, data }) => {
 
                 <h3 style={{fontWeight: 'bold', marginBottom: '10px'}}>Filters</h3>
                 
-                <p className='radio-label'>Gender:</p>
+                <p className='radio-label'>Gender</p>
                 <form onChange={handleGender}>
                     <input type="radio" name="gender" id="A" value=""/>
                     <label for="A">All</label>
+
                     <input type="radio" name="gender" id="M" value="M"/>
                     <label for="M">Male</label>
+
                     <input type="radio" name="gender" id="F" value="F"/>
                     <label for="F">Female</label>
                 </form>
@@ -52,13 +65,19 @@ const Home = ({ summary, data }) => {
                 <form onChange={handleStatus}>
                     <input type="radio" name="status" id="All" value=""/>
                     <label for="All">All</label>
+
                     <input type="radio" name="status" id="Ad" value="Admitted"/>
                     <label for="A">Admitted</label>
+
                     <input type="radio" name="status" id="D" value="Died"/>
                     <label for="D">Died</label>
+
                     <input type="radio" name="status" id="R" value="Recovered"/>
                     <label for="R">Recovered</label>
                 </form>
+
+                <input type="checkbox" name="nationality" id="nationality" value="nationality" onChange={handleNationality}/>
+                <label for="nationality">Filipinos Only</label>
 
                 {patientData.map(patient =>
                     <div className='patients'>

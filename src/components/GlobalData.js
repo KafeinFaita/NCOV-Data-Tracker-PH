@@ -39,7 +39,7 @@ const GlobalData = ({ countries, global }) => {
                 </div>  
             </div>
 
-            <h2>Statistics by Country</h2>
+            <h2 id='stats-country-title'>Statistics by Country</h2>
 
             <select onChange={handleChange}> 
                 <option value="" selected hidden>Choose Country</option>   

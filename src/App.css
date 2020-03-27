@@ -6,6 +6,7 @@
 
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #header {
@@ -50,7 +51,7 @@ ul {
 
 #local-data {
   display: flex;
-
+  height: 100%;
 }
 
 .data-container {
@@ -84,8 +85,8 @@ ul {
 
 #patient-container {
   flex: 1;
-  overflow: scroll;
-  height: 100vh;
+  overflow: auto;
+  height: 125vh;
 }
 
 .patients {
@@ -159,6 +160,10 @@ input[type=radio] {
  color: white;
 }
 
+#stats-country-title {
+  margin: 20px 0;
+}
+
 #total {
   color: blue;
 }
@@ -210,5 +215,9 @@ input[type=radio] {
   #ph-summary {
     margin: 0;
     border: none;
+  }
+
+  #patient-container {
+    overflow: visible;
   }
 }
