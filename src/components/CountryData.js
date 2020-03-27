@@ -2,14 +2,13 @@ import React from 'react';
 import { FaBriefcaseMedical, FaAmbulance, FaHeartbeat, FaMedkit, FaCross } from 'react-icons/fa';
 
 const CountryData = ({ summary }) => {
+
     return (
         <div id='country-data'>
-
             <div id='data'>
                 <div className="data-container" id='total'>
                     <FaBriefcaseMedical size='50'/>
-                    <h3>Total Cases</h3>
-                    <p>{summary.cases}</p>
+                    <h3>Total Cases: {summary.cases}</h3>
                 </div>
                 
                 <div className="data-container" id='active'>

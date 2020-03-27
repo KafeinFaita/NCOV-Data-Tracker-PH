@@ -78,7 +78,9 @@ ul {
   padding: 20px;
   border-right: 2px solid black;
   background-color: rgb(197, 197, 197);
-  width: 25%;
+  width: 27%;
+  overflow: auto;
+  text-overflow: ellipsis;
 }
 
 #ph-summary p {
@@ -91,8 +93,22 @@ ul {
   height: 125vh;
 }
 
+#patient-container-header {
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+
+#patient-container-header p {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#patient-container-header label {
+  font-size: 13px;
+}
+
 .patients {
-  border: 2px solid black;
   max-width: 80%;
   margin: 15px auto;
   padding: 15px;
@@ -151,11 +167,16 @@ input[type=radio] {
   font-size: 30px;
   margin-bottom: 20px;
   border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.global-stats:hover {
+  background-color: rgb(129, 129, 129);
+  color: white;
 }
 
 .global-icon {
   margin-bottom: 30px;
-  color: red;
 }
 
 #country-data {
@@ -210,6 +231,10 @@ input[type=radio] {
     max-width: 80%;
   }
 
+  .data-container {
+    max-width: 80%;
+  }
+
   #local-data {
     display: block;
   }
@@ -222,6 +247,16 @@ input[type=radio] {
 
   #patient-container {
     overflow: visible;
+  }
+
+  #patient-container-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #cases-guide {
+    margin-bottom: 15px;
   }
 
   #global-data h2{

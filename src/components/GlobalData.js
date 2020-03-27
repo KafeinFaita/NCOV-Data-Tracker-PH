@@ -5,7 +5,7 @@ import { FaUserInjured, FaSkullCrossbones, FaUserCheck } from 'react-icons/fa';
 const GlobalData = ({ countries, global }) => {
 
     const [isLoading, setIsLoading] = useState(false);
-    const [summary, setSummary] = useState()  
+    const [summary, setSummary] = useState()
 
     const handleChange = (e) => {
         setIsLoading(true);
@@ -21,19 +21,19 @@ const GlobalData = ({ countries, global }) => {
             <div id='global-stats-container'>
                 <h2>Global Statistics</h2>
                 <div className='global-stats'>
-                    <FaUserInjured size={70} className='global-icon'/>
+                    <FaUserInjured size={70} className='global-icon' style={{color: 'blue'}}/>
                     <h3>Cases</h3>
                     <p>{global.cases}</p>
                 </div>  
 
                 <div className='global-stats'>
-                    <FaSkullCrossbones size={70} className='global-icon'/>
+                    <FaSkullCrossbones size={70} className='global-icon' style={{color: 'red'}}/>
                     <h3>Deaths</h3>
                     <p>{global.deaths}</p>
                 </div>  
 
                 <div className='global-stats'>
-                    <FaUserCheck size={70} className='global-icon'/>
+                    <FaUserCheck size={70} className='global-icon' style={{color: 'green'}}/>
                     <h3>Recovered</h3>
                     <p>{global.recovered}</p>
                 </div>  
@@ -46,8 +46,10 @@ const GlobalData = ({ countries, global }) => {
                 {countries.map(country => <option value={country}>{country}</option>)}        
             </select>  
 
-            {!summary ? <h3>PICK A COUNTRY</h3> : isLoading ? <h3>Loading</h3> : <CountryData summary={summary}/>}
-            
+            {isLoading ? <h3>Loading</h3> : null} 
+
+            {!summary ? <h3>PICK A COUNTRY</h3> : <CountryData summary={summary}/>}
+       
         </div>
     )
 }
