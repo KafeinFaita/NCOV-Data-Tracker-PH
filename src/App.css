@@ -44,9 +44,10 @@ ul {
 
 #data {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  min-width: 300px;
+  justify-content: center;
+  
 }
 
 #local-data {
@@ -56,7 +57,7 @@ ul {
 
 .data-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 300px;
   padding: 20px;
   background-color: rgb(255, 255, 255);
   margin: 5px 0;
@@ -77,6 +78,7 @@ ul {
   padding: 20px;
   border-right: 2px solid black;
   background-color: rgb(197, 197, 197);
+  width: 25%;
 }
 
 #ph-summary p {
@@ -215,9 +217,14 @@ input[type=radio] {
   #ph-summary {
     margin: 0;
     border: none;
+    width: 100%;
   }
 
   #patient-container {
     overflow: visible;
+  }
+
+  #global-data h2{
+    padding: 0 20px;
   }
 }
