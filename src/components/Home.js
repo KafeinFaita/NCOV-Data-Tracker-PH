@@ -107,8 +107,8 @@ const Home = ({ summary, data }) => {
                                 <p>Gender: {patient.gender}</p>
                                 <p>Nationality: {patient.nationality}</p>
                                 <p>Hospital: {patient.hospital_admitted_to}</p>
-                                <p>Recently Travelled Abroad?: {patient.had_recent_travel_history_abroad}</p>
-                                <p>Additional Info: {patient.other_information}</p>   
+                                <p>Recently Travelled Abroad?: {patient.travel_history}</p>
+                                <p>Patient Residence: {patient.resident_of}</p>   
                             </div>
                         )}
                     )}
