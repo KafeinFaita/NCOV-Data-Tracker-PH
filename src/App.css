@@ -87,10 +87,11 @@ ul {
   margin-bottom: 20px;
 }
 
+
 #patient-container {
   flex: 1;
-  overflow: auto;
   height: 125vh;
+  overflow: auto;
 }
 
 #patient-container-header {

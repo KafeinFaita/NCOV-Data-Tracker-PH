@@ -6,6 +6,8 @@ const About = () => {
             <h1>App made by: LYNYRD ANDRES</h1>
             <p>This App is still under construction</p>
         </div>
+
+        
     
     )
 }

@@ -92,26 +92,28 @@ const Home = ({ summary, data }) => {
                 
                 </div>
 
-                
-                {patientData.map(patient => { 
-                    const style = patient.status === 'Died' ? 
-                        'red' : patient.status === 'Recovered' ?
-                        'green' : patient.status === 'Admitted' ?
-                        'orange' : 'black'                        
+                <div id='patients'>
+                    {patientData.map(patient => { 
+                        const style = patient.status === 'Died' ? 
+                            'red' : patient.status === 'Recovered' ?
+                            'green' : patient.status === 'Admitted' ?
+                            'orange' : 'black'                        
 
-                    return (
-                        <div className='patients' style={{border: `2px solid ${style}`}}>
-                            <h3 style={{color: style}}>Case #{patient.case_no}</h3>
-                            <p>Date Diagnosed: {patient.date}</p>
-                            <p>Age: {patient.age}</p>
-                            <p>Gender: {patient.gender}</p>
-                            <p>Nationality: {patient.nationality}</p>
-                            <p>Hospital: {patient.hospital_admitted_to}</p>
-                            <p>Recently Travelled Abroad?: {patient.had_recent_travel_history_abroad}</p>
-                            <p>Additional Info: {patient.other_information}</p>   
-                        </div>
-                )}
-                )}
+                        return (
+                            <div className='patients' style={{border: `2px solid ${style}`}}>
+                                <h3 style={{color: style}}>Case #{patient.case_no}</h3>
+                                <p>Date Confirmed: {patient.date}</p>
+                                <p>Age: {patient.age}</p>
+                                <p>Gender: {patient.gender}</p>
+                                <p>Nationality: {patient.nationality}</p>
+                                <p>Hospital: {patient.hospital_admitted_to}</p>
+                                <p>Recently Travelled Abroad?: {patient.had_recent_travel_history_abroad}</p>
+                                <p>Additional Info: {patient.other_information}</p>   
+                            </div>
+                        )}
+                    )}
+                </div>
+                
             </div>
             
         </div>
